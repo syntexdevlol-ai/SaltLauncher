@@ -61,13 +61,14 @@ public class PojavApplication extends Application {
 				}
 
 				// Best-effort copy to Downloads (accessible without needing Android/data access)
-				runCatching(() -> {
+				try {
 					FileUtils.ensureParentDirectory(downloadCrashFile);
 					try (PrintStream downloadStream = new PrintStream(downloadCrashFile)) {
 						downloadStream.append(crashText);
 					}
-					return null;
-				});
+				} catch (Throwable ignored) {
+					// If writing to public Downloads fails, we still keep the primary crash file.
+				}
 			} catch (Throwable throwable) {
 				Logging.e(CRASH_REPORT_TAG, " - Exception attempt saving crash stack trace:", throwable);
 				Logging.e(CRASH_REPORT_TAG, " - The crash stack trace was:", th);
