@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.util.Log;
+import android.os.Environment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -43,18 +44,30 @@ public class PojavApplication extends Application {
 		Thread.setDefaultUncaughtExceptionHandler((thread, th) -> {
 			boolean storagePermAllowed = (Build.VERSION.SDK_INT >= 29 || ActivityCompat.checkSelfPermission(PojavApplication.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) && Tools.checkStorageRoot();
 			File crashFile = new File(storagePermAllowed ? PathManager.DIR_LAUNCHER_LOG : PathManager.DIR_DATA, "latestcrash.txt");
+			// Also write a copy to the public Downloads folder for easier user access
+			File downloadCrashFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "saltlauncher-crash.txt");
 			try {
 				// Write to file, since some devices may not able to show error
 				FileUtils.ensureParentDirectory(crashFile);
-				PrintStream crashStream = new PrintStream(crashFile);
-				crashStream.append(InfoDistributor.APP_NAME + " crash report\n");
-				crashStream.append(" - Time: ").append(DateFormat.getDateTimeInstance().format(new Date())).append("\n");
-				crashStream.append(" - Device: ").append(Build.PRODUCT).append(" ").append(Build.MODEL).append("\n");
-				crashStream.append(" - Android version: ").append(Build.VERSION.RELEASE).append("\n");
-				crashStream.append(" - Launcher version: ").append(getVersionName()).append(" (").append(String.valueOf(getVersionCode())).append(")").append("\n");
-				crashStream.append(" - Crash stack trace:\n");
-				crashStream.append(Log.getStackTraceString(th));
-				crashStream.close();
+				String crashText = InfoDistributor.APP_NAME + " crash report\n" +
+						" - Time: " + DateFormat.getDateTimeInstance().format(new Date()) + "\n" +
+						" - Device: " + Build.PRODUCT + " " + Build.MODEL + "\n" +
+						" - Android version: " + Build.VERSION.RELEASE + "\n" +
+						" - Launcher version: " + getVersionName() + " (" + getVersionCode() + ")\n" +
+						" - Crash stack trace:\n" + Log.getStackTraceString(th);
+
+				try (PrintStream crashStream = new PrintStream(crashFile)) {
+					crashStream.append(crashText);
+				}
+
+				// Best-effort copy to Downloads (accessible without needing Android/data access)
+				runCatching(() -> {
+					FileUtils.ensureParentDirectory(downloadCrashFile);
+					try (PrintStream downloadStream = new PrintStream(downloadCrashFile)) {
+						downloadStream.append(crashText);
+					}
+					return null;
+				});
 			} catch (Throwable throwable) {
 				Logging.e(CRASH_REPORT_TAG, " - Exception attempt saving crash stack trace:", throwable);
 				Logging.e(CRASH_REPORT_TAG, " - The crash stack trace was:", th);
