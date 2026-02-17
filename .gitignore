@@ -1,0 +1,10 @@
+/.gradle
+/build
+/*/build
+local.properties
+.idea/
+.vs/
+/curseforge_key.txt
+/SaltLauncherApp/.cxx/
+/SaltLauncherApp/src/main/assets/components/lwjgl3/
+/SaltLauncherApp/release/
