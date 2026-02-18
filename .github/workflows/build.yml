@@ -53,7 +53,7 @@ jobs:
       - name: Build debug APK
         run: |
           chmod +x gradlew
-          DISABLE_NDK_BUILD=1 ./gradlew --no-daemon FCL:assembleDebug
+          DISABLE_NDK_BUILD=1 ./gradlew --no-daemon --stacktrace --info --warning-mode all FCL:assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
