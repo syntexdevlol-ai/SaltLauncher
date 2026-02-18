@@ -24,6 +24,7 @@ import com.saltlauncher.app.feature.log.Logging;
 import com.saltlauncher.app.setting.AllSettings;
 import com.saltlauncher.app.ui.activity.SafeModeActivity;
 import com.saltlauncher.app.ui.activity.ErrorActivity;
+import com.saltlauncher.app.utils.DebugFileLogger;
 import com.saltlauncher.app.utils.path.PathManager;
 import com.saltlauncher.app.utils.ZHTools;
 
@@ -40,6 +41,7 @@ public class PojavApplication extends Application {
 
 	@Override
 	public void onCreate() {
+		DebugFileLogger.log(this, "PojavApplication onCreate start");
 		try {
 			doOnCreate();
 		} catch (Throwable t) {
@@ -49,6 +51,7 @@ public class PojavApplication extends Application {
 
 	private void doOnCreate() {
 		ContextExecutor.setApplication(this);
+		DebugFileLogger.log(this, "doOnCreate: context set");
 
 		Thread.setDefaultUncaughtExceptionHandler((thread, th) -> {
 			boolean storagePermAllowed = (Build.VERSION.SDK_INT >= 29 || ActivityCompat.checkSelfPermission(PojavApplication.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) && Tools.checkStorageRoot();
@@ -56,6 +59,7 @@ public class PojavApplication extends Application {
 			// Also write a copy to the public Downloads folder for easier user access
 			File downloadCrashFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "saltlauncher-crash.txt");
 			try {
+				DebugFileLogger.log(PojavApplication.this, "Uncaught exception: " + th);
 				// Write to file, since some devices may not able to show error
 				FileUtils.ensureParentDirectory(crashFile);
 				String crashText = InfoDistributor.APP_NAME + " crash report\n" +
@@ -115,6 +119,7 @@ public class PojavApplication extends Application {
 	}
 
 	private void launchSafeMode(Throwable t, String message) {
+		DebugFileLogger.log(this, "launchSafeMode: " + message + " : " + t);
 		try {
 			Intent intent = new Intent(this, SafeModeActivity.class)
 					.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -123,6 +128,7 @@ public class PojavApplication extends Application {
 			startActivity(intent);
 		} catch (Throwable ignore) {
 			Log.e(CRASH_REPORT_TAG, "SafeMode fallback failed", ignore);
+			DebugFileLogger.log(this, "SafeMode fallback failed: " + ignore);
 		}
 	}
 
