@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      ANDROID_HOME: /usr/lib/android-sdk
-      ANDROID_SDK_ROOT: /usr/lib/android-sdk
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,14 +27,23 @@ jobs:
           java-version: "17"
           cache: gradle
 
-      - name: Install Android SDK command line tools
+      - name: Install Android SDK command line tools (user-writable)
+        env:
+          ANDROID_SDK_ROOT: ${{ runner.temp }}/android-sdk
+          ANDROID_HOME: ${{ runner.temp }}/android-sdk
         run: |
-          sudo mkdir -p /usr/lib/android-sdk/cmdline-tools
+          mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"
           curl -sSL -o /tmp/cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
-          sudo unzip -q /tmp/cmdline-tools.zip -d /usr/lib/android-sdk/cmdline-tools
-          sudo mv /usr/lib/android-sdk/cmdline-tools/cmdline-tools /usr/lib/android-sdk/cmdline-tools/latest
-          yes | sudo /usr/lib/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platform-tools" "platforms;android-33" "build-tools;33.0.2"
-          echo "PATH=$PATH:/usr/lib/android-sdk/platform-tools:/usr/lib/android-sdk/cmdline-tools/latest/bin:/usr/lib/android-sdk/build-tools/33.0.2" >> $GITHUB_ENV
+          unzip -q /tmp/cmdline-tools.zip -d "$ANDROID_SDK_ROOT/cmdline-tools"
+          mv "$ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools" "$ANDROID_SDK_ROOT/cmdline-tools/latest"
+          yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$ANDROID_SDK_ROOT" "platform-tools" "platforms;android-33" "build-tools;33.0.2" "ndk;27.0.12077973"
+          echo "$ANDROID_SDK_ROOT/platform-tools" >> $GITHUB_PATH
+          echo "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin" >> $GITHUB_PATH
+          echo "$ANDROID_SDK_ROOT/build-tools/33.0.2" >> $GITHUB_PATH
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+          echo "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+          echo "ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/27.0.12077973" >> $GITHUB_ENV
+          echo "NDK_HOME=$ANDROID_SDK_ROOT/ndk/27.0.12077973" >> $GITHUB_ENV
 
       - name: Build debug APK
         run: |
