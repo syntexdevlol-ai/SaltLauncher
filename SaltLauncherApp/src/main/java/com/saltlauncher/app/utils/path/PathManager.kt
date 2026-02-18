@@ -72,7 +72,8 @@ class PathManager {
         @JvmStatic
         fun getExternalStorageRoot(ctx: Context): File {
             return if (VERSION.SDK_INT >= 29) {
-                ctx.getExternalFilesDir(null)!!
+                // Some devices can return null when external storage isn't mounted; fallback to app files dir to avoid crashes.
+                ctx.getExternalFilesDir(null) ?: ctx.filesDir
             } else {
                 File(Environment.getExternalStorageDirectory(), "games/${InfoDistributor.LAUNCHER_NAME}")
             }
