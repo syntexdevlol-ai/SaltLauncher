@@ -388,7 +388,7 @@
     <string name="input_url">Введіть коректну URL-адресу.</string>
 
     <string name="install_change_version">Виберіть версію</string>
-    <string name="install_change_version_confirm">Ви впевнені, що хочете змінити версію %s з %s на %s?</string>
+    <string name="install_change_version_confirm">Ви впевнені, що хочете змінити версію %1$s з %2$s на %3$s?</string>
     <string name="install_failed">Помилка встановлення</string>
     <string name="install_failed_downloading">Не вдалося завантажити деякі необхідні файли.</string>
     <string name="install_failed_downloading_detail">Неможливо завантажити файл: %s</string>
@@ -397,7 +397,7 @@
     <string name="install_failed_malformed">Завантажені файли пошкоджені. Спробуйте вирішити цю проблему, переключившись на інше дзеркало завантаження.</string>
     <string name="install_failed_optifine_conflict">Неможливо встановити Fabric, OptiFine і Forge одночасно на версіях Minecraft 1.13 і вище.</string>
     <string name="install_failed_optifine_forge_1.17">Minecraft 1.17.1 і нижче Forge сумісний лише з OptiFine H1 Pre2 і новішими. Встановіть відповідну версію OptiFine.</string>
-    <string name="install_failed_version_mismatch">Для цієї бібліотеки потрібна версія гри %s, а встановлена версія %s.</string>
+    <string name="install_failed_version_mismatch">Для цієї бібліотеки потрібна версія гри %1$s, а встановлена версія %2$s.</string>
     <string name="install_installer_change_version">Версія %s несумісна з поточною версією гри. Натисніть тут, щоб замінити її іншою версією або видалити.</string>
     <string name="install_installer_choose">Виберіть версію %s</string>
     <string name="install_installer_depend">Потрібно %s</string>
@@ -553,7 +553,7 @@
     <string name="modpack_installing">Встановлення модпака</string>
     <string name="modpack_introduction">Наразі підтримуються пакети модів CurseForge, Modrinth, MultiMC та MCBBS.</string>
     <string name="modpack_invalid">Неправильний модпак, спробуйте його перезавантажити.</string>
-    <string name="modpack_mismatched_type">Невідповідність типу модпака. Поточний профіль має тип %s, а наданий — %s.</string>
+    <string name="modpack_mismatched_type">Невідповідність типу модпака. Поточний профіль має тип %1$s, а наданий — %2$s.</string>
     <string name="modpack_name">Назва модпака</string>
     <string name="modpack_not_a_valid_name">Недопустима назва модпака</string>
     <string name="modpack_origin">Джерело</string>
@@ -841,7 +841,7 @@
     <string name="world_add">Додати світ (.zip)</string>
     <string name="world_datapack">Керування датапаками</string>
     <string name="world_datapack_1_13">Тільки Minecraft 1.13 або новіший підтримує датапаки.</string>
-    <string name="world_description">%s. Остання гра: %s. Версія гри: %s.</string>
+    <string name="world_description">%1$s. Остання гра: %2$s. Версія гри: %3$s.</string>
     <string name="world_download">Завантажити світ</string>
     <string name="world_export">Експорт світу</string>
     <string name="world_export_title">Виберіть каталог для цього експортованого світу</string>
@@ -912,7 +912,7 @@
     <string name="mod_check_valkyrienskies">Мод Valkyrien Skies/Valkyrien Warfare (%s) не працює в одиночній грі напряму. Необхідний сервер, інакше це призведе до збою гри.</string>
     <string name="mod_check_yes_steve_model">Мод Yes Steve Model (%s) версії 2.2.2 і вище не працює на Android.</string>
     <string name="mod_check_imblocker">IMBlocker/In-GameIME (%s) не призначений для Android. Це призведе до збою гри.</string>
-    <string name="mod_check_replay">Replay (%s) потребує плагін FFmpeg. Він не встановлений. Встановіть з Google Play Store або тут (%s або %s) (затисніть для копіювання).</string>
+    <string name="mod_check_replay">Replay (%1$s) потребує плагін FFmpeg. Він не встановлений. Встановіть з Google Play Store або тут (%2$s або %3$s) (затисніть для копіювання).</string>
     <string name="mod_check_borderlesswindow">BorderlessWindow (%s) не призначений для Android. Це призведе до збою гри.</string>
     <string name="mod_check_axiom">Поточний Axiom (%s) не пропатчений, це призведе до збою гри.</string>
 

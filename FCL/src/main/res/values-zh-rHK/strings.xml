@@ -424,7 +424,7 @@
     <string name="input_url">指定嘅輸入框必須輸入有效嘅鏈接。</string>
 
     <string name="install_change_version">更改版本</string>
-    <string name="install_change_version_confirm">你確定將 %s 版本從 %s 改為 %s 嗎?</string>
+    <string name="install_change_version_confirm">你確定將 %1$s 版本從 %2$s 改為 %3$s 嗎?</string>
     <string name="install_failed">安裝失敗</string>
     <string name="install_failed_downloading">無法下載一啲所需文件。</string>
     <string name="install_failed_downloading_detail">無法下載</string>
@@ -433,7 +433,7 @@
     <string name="install_failed_malformed">文件下載中斷，你可以切換下載源以嘗試修復此問題。</string>
     <string name="install_failed_optifine_conflict">喺 Minecraft 1.13 及更新嘅版本中無法同時安裝 Forge，OptiFine 同 Fabric。</string>
     <string name="install_failed_optifine_forge_1.17">對於 Minecraft 1.17.1 或更舊嘅版本，Forge 僅支持 OptiFine H1 Pre2 或更新嘅版本。</string>
-    <string name="install_failed_version_mismatch">該軟件需要遊戲版本 %s，但當前版本為 %s。</string>
+    <string name="install_failed_version_mismatch">該軟件需要遊戲版本 %1$s，但當前版本為 %2$s。</string>
     <string name="install_installer_change_version">版本 %s 與當前遊戲版本唔兼容。點擊更改版本或移除版本。</string>
     <string name="install_installer_choose">選擇 %s 版本</string>
     <string name="install_installer_depend">需要 %s</string>
@@ -589,7 +589,7 @@
     <string name="modpack_installing">正在安裝整合包</string>
     <string name="modpack_introduction">支持 Curse、Modrinth、MultiMC、MCBBS 整合包。</string>
     <string name="modpack_invalid">無效嘅整合包升級文件，可能係下載時出現問題。</string>
-    <string name="modpack_mismatched_type">整合包類型唔匹配，當前遊戲係 %s 整合包，但係提供嘅整合包更新文件係 %s 整合包。</string>
+    <string name="modpack_mismatched_type">整合包類型唔匹配，當前遊戲係 %1$s 整合包，但係提供嘅整合包更新文件係 %2$s 整合包。</string>
     <string name="modpack_name">整合包名稱</string>
     <string name="modpack_not_a_valid_name">唔係一個有效嘅整合包名稱</string>
     <string name="modpack_origin">來源</string>
@@ -935,7 +935,7 @@
     <string name="world_add">添加世界</string>
     <string name="world_datapack">管理數據包</string>
     <string name="world_datapack_1_13">僅 Minecraft 1.13 及之後嘅版本支持數據包</string>
-    <string name="world_description">%s。 上一次遊戲時間: %s。 遊戲版本: %s。</string>
+    <string name="world_description">%1$s。 上一次遊戲時間: %2$s。 遊戲版本: %3$s。</string>
     <string name="world_download">存檔下載</string>
     <string name="world_export">導出此世界</string>
     <string name="world_export_title">選擇該世界嘅存儲位置</string>
@@ -1011,7 +1011,7 @@
     <string name="mod_check_valkyrienskies">瓦爾基里天空/瓦爾基里戰爭（%s）無法直接喺單人模式下運行。你必須使用伺服器運行（可以使用Termux），否則遊戲會崩潰。</string>
     <string name="mod_check_yes_steve_model">係，史蒂夫模型（%s）2.2.2+無法喺安卓系統上運行。</string>
     <string name="mod_check_imblocker">輸入法衝突修復/遊戲內輸入法 (%s) 唔適用於安卓。佢會使遊戲喺啟動階段崩潰。</string>
-    <string name="mod_check_replay">Replay (%s)需要FFmpeg插件，似乎你並冇安裝。你可以從谷歌商店下載或者呢度下載（ %s 或者 %s ）（長按複製）</string>
+    <string name="mod_check_replay">Replay (%1$s)需要FFmpeg插件，似乎你並冇安裝。你可以從谷歌商店下載或者呢度下載（ %2$s 或者 %3$s ）（長按複製）</string>
     <string name="mod_check_borderlesswindow">無邊框全屏 (%s) 唔適用於安卓。佢會使遊戲喺啟動階段崩潰。</string>
     <string name="mod_check_axiom">當前使用嘅Axiom模組（%s）未經修補，啟動後將會崩潰。</string>
     <string name="mod_check_sodium">當前使用嘅GL4ES渲染器可能無法運行模組Sodium/Embeddium（%s），繼續啟動可能會導致遊戲崩潰，建議下載並使用MobileGlues渲染器（https://github.com/MobileGL-Dev/MobileGlues-release/releases）。</string>

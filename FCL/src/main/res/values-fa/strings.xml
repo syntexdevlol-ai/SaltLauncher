@@ -420,7 +420,7 @@
     <string name="input_url">ورودی باید یک URL معتبر باشد.</string>
 
     <string name="install_change_version">تغییر نسخه</string>
-    <string name="install_change_version_confirm">آیا مطمئنید که می خواهید %s را از نسخه %s به %s تغییر دهید؟</string>
+    <string name="install_change_version_confirm">آیا مطمئنید که می خواهید %1$s را از نسخه %2$s به %3$s تغییر دهید؟</string>
     <string name="install_failed">نصب ناموفق بود</string>
     <string name="install_failed_downloading">ما نمی توانیم برخی از فایل های مورد نیاز را دانلود کنیم.</string>
     <string name="install_failed_downloading_detail">دانلود فایل ناموفق بود: %s</string>
@@ -429,7 +429,7 @@
     <string name="install_failed_malformed">فایل های دانلود شده خراب هستند. می توانید سعی کنید این مشکل را با جابجایی به میرور دانلود دیگری برطرف کنید.</string>
     <string name="install_failed_optifine_conflict">نمی توان فابریک، اپتیفاین و فورج را روی ماینکرفت ۱.۱۳ یا بالاتر نصب کرد.</string>
     <string name="install_failed_optifine_forge_1.17">برای نسخه ماینکرفت ۱.۱۷.۱ یا پایین تر، فورج فقط از اپتیفاین H1 Pre2 یا جدیدتر پشتیبانی می کند. می توانید آنها را در تب نسخه های فوری نصب کنید.</string>
-    <string name="install_failed_version_mismatch">این کتابخانه به نسخه بازی %s نیاز دارد، اما نسخه نصب شده %s است.</string>
+    <string name="install_failed_version_mismatch">این کتابخانه به نسخه بازی %1$s نیاز دارد، اما نسخه نصب شده %2$s است.</string>
     <string name="install_installer_change_version">نسخه %s با نسخه فعلی بازی سازگار نیست. اینجا را کلیک کنید تا آن را با نسخه دیگری جایگزین کنید یا آن را حذف کنید.</string>
     <string name="install_installer_choose">نسخه %s خود را انتخاب کنید</string>
     <string name="install_installer_depend">%s نیاز دارد</string>
@@ -577,7 +577,7 @@
     <string name="modpack_installing">در حال نصب مادپک</string>
     <string name="modpack_introduction">مادپک های CurseForge، Modrinth، MultiMC و MCBBS در حال حاضر پشتیبانی می شوند.</string>
     <string name="modpack_invalid">مادپک نامعتبر است، می توانید آن را دوباره دانلود کنید.</string>
-    <string name="modpack_mismatched_type">نوع مادپک مطابقت ندارد، نمونه فعلی از نوع %s است، اما نمونه ارائه شده از نوع %s است.</string>
+    <string name="modpack_mismatched_type">نوع مادپک مطابقت ندارد، نمونه فعلی از نوع %1$s است، اما نمونه ارائه شده از نوع %2$s است.</string>
     <string name="modpack_name">نام مادپک</string>
     <string name="modpack_not_a_valid_name">نام مادپک نامعتبر است</string>
     <string name="modpack_origin">منبع</string>
@@ -880,7 +880,7 @@
     <string name="world_add">افزودن یک دنیا (.zip)</string>
     <string name="world_datapack">مدیریت دیتاپک ها</string>
     <string name="world_datapack_1_13">فقط ماینکرفت ۱.۱۳ یا جدیدتر از دیتاپک ها پشتیبانی می کند.</string>
-    <string name="world_description">آخرین بازی در %s. نسخه بازی: %s.</string>
+    <string name="world_description">آخرین بازی در %1$s. نسخه بازی: %2$s.</string>
     <string name="world_download">دانلود یک دنیا</string>
     <string name="world_export">خروجی گرفتن از دنیا</string>
     <string name="world_export_title">یک پوشه برای خروجی گرفتن از این دنیا انتخاب کنید</string>

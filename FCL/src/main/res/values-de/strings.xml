@@ -388,7 +388,7 @@
     <string name="input_url">Geben Sie eine gültige URL ein.</string>
 
     <string name="install_change_version">Version auswählen</string>
-    <string name="install_change_version_confirm">Sind Sie sicher, dass Sie die Version %s von %s auf %s ändern möchten?</string>
+    <string name="install_change_version_confirm">Sind Sie sicher, dass Sie die Version %1$s von %2$s auf %3$s ändern möchten?</string>
     <string name="install_failed">Installationsfehler</string>
     <string name="install_failed_downloading">Einige erforderliche Dateien konnten nicht heruntergeladen werden.</string>
     <string name="install_failed_downloading_detail">Datei konnte nicht heruntergeladen werden: %s</string>
@@ -397,7 +397,7 @@
     <string name="install_failed_malformed">Heruntergeladene Dateien sind beschädigt. Versuchen Sie, das Problem zu lösen, indem Sie zu einem anderen Download-Spiegel wechseln.</string>
     <string name="install_failed_optifine_conflict">Fabric, OptiFine und Forge können nicht gleichzeitig auf Minecraft-Versionen 1.13 und höher installiert werden.</string>
     <string name="install_failed_optifine_forge_1.17">Minecraft 1.17.1 und niedriger Forge ist nur mit OptiFine H1 Pre2 und neuer kompatibel. Installieren Sie die entsprechende OptiFine-Version.</string>
-    <string name="install_failed_version_mismatch">Diese Bibliothek erfordert die Spielversion %s, aber die installierte Version ist %s.</string>
+    <string name="install_failed_version_mismatch">Diese Bibliothek erfordert die Spielversion %1$s, aber die installierte Version ist %2$s.</string>
     <string name="install_installer_change_version">Version %s ist nicht mit der aktuellen Spielversion kompatibel. Klicken Sie hier, um sie durch eine andere Version zu ersetzen oder zu entfernen.</string>
     <string name="install_installer_choose">Wählen Sie die Version %s</string>
     <string name="install_installer_depend">Erforderlich: %s</string>
@@ -540,7 +540,7 @@
     <string name="modpack_installing">Modpack wird installiert</string>
     <string name="modpack_introduction">Derzeit werden Modpacks von CurseForge, Modrinth, MultiMC und MCBBS unterstützt.</string>
     <string name="modpack_invalid">Ungültiges Modpack, versuchen Sie es erneut herunterzuladen.</string>
-    <string name="modpack_mismatched_type">Modpack-Typ stimmt nicht überein. Das aktuelle Profil hat den Typ %s, während das bereitgestellte Modpack den Typ %s hat.</string>
+    <string name="modpack_mismatched_type">Modpack-Typ stimmt nicht überein. Das aktuelle Profil hat den Typ %1$s, während das bereitgestellte Modpack den Typ %2$s hat.</string>
     <string name="modpack_not_a_valid_name">Ungültiger Modpackname</string>
     <string name="modpack_origin">Quelle</string>
     <string name="modpack_origin_url">Offizielle Website</string>
@@ -824,7 +824,7 @@
     <string name="world_add">Welt hinzufügen (.zip)</string>
     <string name="world_datapack">Datenpakete verwalten</string>
     <string name="world_datapack_1_13">Nur Minecraft 1.13 oder neuer unterstützt Datenpakete.</string>
-    <string name="world_description">%s. Zuletzt gespielt: %s. Spielversion: %s.</string>
+    <string name="world_description">%1$s. Zuletzt gespielt: %2$s. Spielversion: %3$s.</string>
     <string name="world_download">Welt herunterladen</string>
     <string name="world_export">Welt exportieren</string>
     <string name="world_export_title">Verzeichnis für diese exportierte Welt wählen</string>
@@ -895,7 +895,7 @@
     <string name="mod_check_valkyrienskies">Die Valkyrien Skies/Valkyrien Warfare-Mod (%s) funktioniert nicht direkt im Einzelspieler. Ein Server ist erforderlich, andernfalls führt dies zu einem Spielabsturz.</string>
     <string name="mod_check_yes_steve_model">Die Yes Steve Model-Mod (%s) Version 2.2.2 und höher funktioniert nicht auf Android.</string>
     <string name="mod_check_imblocker">IMBlocker/In-GameIME (%s) ist nicht für Android vorgesehen. Dies führt zu einem Spielabsturz.</string>
-    <string name="mod_check_replay">Replay (%s) benötigt das FFmpeg-Plugin. Es ist nicht installiert. Installieren Sie es aus dem Google Play Store oder hier (%s oder %s) (lange drücken zum Kopieren).</string>
+    <string name="mod_check_replay">Replay (%1$s) benötigt das FFmpeg-Plugin. Es ist nicht installiert. Installieren Sie es aus dem Google Play Store oder hier (%2$s oder %3$s) (lange drücken zum Kopieren).</string>
     <string name="mod_check_borderlesswindow">BorderlessWindow (%s) ist nicht für Android vorgesehen. Dies führt zu einem Spielabsturz.</string>
     <string name="mod_check_axiom">Die aktuelle Axiom-Mod (%s) ist nicht gepatcht, dies führt zu einem Spielabsturz.</string>
 

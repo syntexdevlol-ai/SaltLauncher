@@ -438,7 +438,7 @@
     <string name="input_url">指定的输入框必须输入有效的链接。</string>
 
     <string name="install_change_version">更改版本</string>
-    <string name="install_change_version_confirm">你确定将 %s 版本从 %s 改为 %s 吗?</string>
+    <string name="install_change_version_confirm">你确定将 %1$s 版本从 %2$s 改为 %3$s 吗?</string>
     <string name="install_failed">安装失败</string>
     <string name="install_failed_downloading">无法下载一些所需文件。</string>
     <string name="install_failed_downloading_detail">无法下载</string>
@@ -447,7 +447,7 @@
     <string name="install_failed_malformed">文件下载中断，你可以切换下载源以尝试修复此问题。</string>
     <string name="install_failed_optifine_conflict">在 Minecraft 1.13 及更新的版本中无法同时安装 Forge，OptiFine 和 Fabric。</string>
     <string name="install_failed_optifine_forge_1.17">对于 Minecraft 1.17.1 或更旧的版本，Forge 仅支持 OptiFine H1 Pre2 或更新的版本。</string>
-    <string name="install_failed_version_mismatch">该软件需要游戏版本 %s，但当前版本为 %s。</string>
+    <string name="install_failed_version_mismatch">该软件需要游戏版本 %1$s，但当前版本为 %2$s。</string>
     <string name="install_installer_change_version">版本 %s 与当前游戏版本不兼容。点击更改版本或移除版本。</string>
     <string name="install_installer_choose">选择 %s 版本</string>
     <string name="install_installer_depend">需要 %s</string>
@@ -606,7 +606,7 @@
     <string name="modpack_installing">正在安装整合包</string>
     <string name="modpack_introduction">支持 Curse、Modrinth、MultiMC、MCBBS 整合包。</string>
     <string name="modpack_invalid">无效的整合包升级文件，可能是下载时出现问题。</string>
-    <string name="modpack_mismatched_type">整合包类型不匹配，当前游戏是 %s 整合包，但是提供的整合包更新文件是 %s 整合包。</string>
+    <string name="modpack_mismatched_type">整合包类型不匹配，当前游戏是 %1$s 整合包，但是提供的整合包更新文件是 %2$s 整合包。</string>
     <string name="modpack_name">整合包名称</string>
     <string name="modpack_not_a_valid_name">不是一个有效的整合包名称</string>
     <string name="modpack_origin">来源</string>
@@ -902,7 +902,7 @@
     <string name="style_rocker_fill_color">摇杆背景颜色</string>
 
     <string name="terracotta">多人联机</string>
-    <string name="terracotta_metadata">陶瓦版本：%s\nEasyTier 版本：%s</string>
+    <string name="terracotta_metadata">陶瓦版本：%1$s\nEasyTier 版本：%2$s</string>
     <string name="terracotta_easytier">关于 EasyTier</string>
     <string name="terracotta_terracotta">Terracotta | 陶瓦联机</string>
     <string name="terracotta_back">退出</string>
@@ -927,7 +927,7 @@
     <string name="terracotta_menu">联机菜单</string>
     <string name="terracotta_menu_open">打开</string>
     <string name="terracotta_notification_title">Terracotta | 陶瓦联机 正在运行</string>
-    <string name="terracotta_notification_desc">身份：%s，状态：%s</string>
+    <string name="terracotta_notification_desc">身份：%1$s，状态：%2$s</string>
     <string name="terracotta_status_waiting_host_title">我想当房主</string>
     <string name="terracotta_status_waiting_host_desc">创建房间并生成邀请码，与好友一起畅玩</string>
     <string name="terracotta_status_waiting_guest_title">我想当房客</string>
@@ -1042,7 +1042,7 @@
     <string name="world_add">添加世界</string>
     <string name="world_datapack">管理数据包</string>
     <string name="world_datapack_1_13">仅 Minecraft 1.13 及之后的版本支持数据包</string>
-    <string name="world_description">%s。 上一次游戏时间: %s。 游戏版本: %s。</string>
+    <string name="world_description">%1$s。 上一次游戏时间: %2$s。 游戏版本: %3$s。</string>
     <string name="world_download">存档下载</string>
     <string name="world_export">导出此世界</string>
     <string name="world_export_title">选择该世界的存储位置</string>
@@ -1118,7 +1118,7 @@
     <string name="mod_check_valkyrienskies">瓦尔基里天空/瓦尔基里战争（%s）无法直接在单人模式下运行。你必须使用服务器运行（可以使用Termux），否则游戏会崩溃。</string>
     <string name="mod_check_yes_steve_model">是，史蒂夫模型（%s）2.2.2+无法在安卓系统上运行。</string>
     <string name="mod_check_imblocker">输入法冲突修复/游戏内输入法 (%s) 不适用于安卓。它会使游戏在启动阶段崩溃。</string>
-    <string name="mod_check_replay">Replay (%s)需要FFmpeg插件，似乎你并没有安装。你可以从谷歌商店下载或者这里下载（ %s 或者 %s ）（长按复制）</string>
+    <string name="mod_check_replay">Replay (%1$s)需要FFmpeg插件，似乎你并没有安装。你可以从谷歌商店下载或者这里下载（ %2$s 或者 %3$s ）（长按复制）</string>
     <string name="mod_check_borderlesswindow">无边框全屏 (%s) 不适用于安卓。它会使游戏在启动阶段崩溃。</string>
     <string name="mod_check_axiom">当前使用的Axiom模组（%s）未经修补，启动后将会崩溃。</string>
     <string name="mod_check_sodium">当前使用的GL4ES渲染器可能无法运行模组Sodium/Embeddium（%s），继续启动可能会导致游戏崩溃，建议下载并使用MobileGlues渲染器（https://github.com/MobileGL-Dev/MobileGlues-release/releases）。</string>

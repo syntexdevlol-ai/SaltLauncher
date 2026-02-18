@@ -420,7 +420,7 @@
     <string name="input_url">A entrada deve ser um endereço URL válido.</string>
 
     <string name="install_change_version">Mudar versão</string>
-    <string name="install_change_version_confirm">Tem certeza de que deseja trocar a versão de %s de %s para %s?</string>
+    <string name="install_change_version_confirm">Tem certeza de que deseja trocar a versão de %1$s de %2$s para %3$s?</string>
     <string name="install_failed">Instalação falhou</string>
     <string name="install_failed_downloading">Não foi possível baixar os arquivos necessários.</string>
     <string name="install_failed_downloading_detail">Não foi possível baixar o arquivo: %s</string>
@@ -429,7 +429,7 @@
     <string name="install_failed_malformed">Os arquivos baixados estão corrompidos. Você pode tentar mudar para outra fonte de download.</string>
     <string name="install_failed_optifine_conflict">Não é possível instalar ambos Fabric, Optifine, e Forge no Minecraft 1.13 ou superior.</string>
     <string name="install_failed_optifine_forge_1.17">Para Minecraft 1.17.1 ou inferior, Forge apenas suporta OptiFine H1 Pre2 ou superior. Você pode instalar-los na parte de snapshot.</string>
-    <string name="install_failed_version_mismatch">Esta biblioteca requer a versão %s do jogo, mas a que está instalada é %s.</string>
+    <string name="install_failed_version_mismatch">Esta biblioteca requer a versão %1$s do jogo, mas a que está instalada é %2$s.</string>
     <string name="install_installer_change_version">A versão %s não é compatível com a versão atual.do jogo. Clique aqui para mudar para outra versão ou excluir.</string>
     <string name="install_installer_choose">Escolha sua versão de %s</string>
     <string name="install_installer_depend">Requer %s</string>
@@ -577,7 +577,7 @@
     <string name="modpack_installing">Instalando Modpack</string>
     <string name="modpack_introduction">Modpacks de CurseForge, Modrinth, MultiMC, e MCBBS são suportados.</string>
     <string name="modpack_invalid">Modpack inválido, você pode tentar baixá-lo novamente.</string>
-    <string name="modpack_mismatched_type">Tipo de modpack incompatível, a instância atual é do tipo %s, mas a fornecida é do tipo %s.</string>
+    <string name="modpack_mismatched_type">Tipo de modpack incompatível, a instância atual é do tipo %1$s, mas a fornecida é do tipo %2$s.</string>
     <string name="modpack_name">Nome do modpack</string>
     <string name="modpack_not_a_valid_name">Nome de modpack inválido</string>
     <string name="modpack_origin">Fonte</string>
@@ -881,7 +881,7 @@ desfeita!</string>
     <string name="world_add">Adc mundo (.zip)</string>
     <string name="world_datapack">Gerenciar Datapacks</string>
     <string name="world_datapack_1_13">Somente Minecraft 1.13 ou superior suporta datapacks.</string>
-    <string name="world_description">%s. Última vez jogado %s. Versão do jogo: %s.</string>
+    <string name="world_description">%1$s. Última vez jogado %2$s. Versão do jogo: %3$s.</string>
     <string name="world_download">Baixar um mundo</string>
     <string name="world_export">Exportar mundo</string>
     <string name="world_export_title">Selecione um diretório para este mundo exportado</string>
