@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Salt blue accent -->
-    <color name="default_theme_color">#5CC1FF</color>
+    <!-- Theme primary background (white) -->
+    <color name="default_theme_color">#FFFFFFFF</color>
+    <color name="primary_on_color">#111111</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="ui_bg_color">#40F4F4F4</color>
