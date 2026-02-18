@@ -10,8 +10,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
-import android.util.Log;
 import android.os.Environment;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -22,6 +22,7 @@ import com.saltlauncher.app.context.ContextExecutor;
 import com.saltlauncher.app.context.LocaleHelper;
 import com.saltlauncher.app.feature.log.Logging;
 import com.saltlauncher.app.setting.AllSettings;
+import com.saltlauncher.app.ui.activity.SafeModeActivity;
 import com.saltlauncher.app.ui.activity.ErrorActivity;
 import com.saltlauncher.app.utils.path.PathManager;
 import com.saltlauncher.app.utils.ZHTools;
@@ -39,6 +40,14 @@ public class PojavApplication extends Application {
 
 	@Override
 	public void onCreate() {
+		try {
+			doOnCreate();
+		} catch (Throwable t) {
+			launchSafeMode(t, "Startup error");
+		}
+	}
+
+	private void doOnCreate() {
 		ContextExecutor.setApplication(this);
 
 		Thread.setDefaultUncaughtExceptionHandler((thread, th) -> {
@@ -77,25 +86,18 @@ public class PojavApplication extends Application {
 			ErrorActivity.showLauncherCrash(PojavApplication.this, crashFile.getAbsolutePath(), th);
 			ZHTools.killProcess();
 		});
-		
-		try {
-			super.onCreate();
-			PathManager.DIR_DATA = getDir("files", MODE_PRIVATE).getParent();
-			PathManager.DIR_CACHE = getCacheDir();
-			PathManager.DIR_ACCOUNT_NEW = PathManager.DIR_DATA + "/accounts";
-			Tools.DEVICE_ARCHITECTURE = Architecture.getDeviceArchitecture();
-			//Force x86 lib directory for Asus x86 based zenfones
-			if(Architecture.isx86Device() && Architecture.is32BitsDevice()){
-				String originalJNIDirectory = getApplicationInfo().nativeLibraryDir;
-				getApplicationInfo().nativeLibraryDir = originalJNIDirectory.substring(0,
-												originalJNIDirectory.lastIndexOf("/"))
-												.concat("/x86");
-			}
-		} catch (Throwable throwable) {
-			Intent ferrorIntent = new Intent(this, ErrorActivity.class);
-			ferrorIntent.putExtra("throwable", throwable);
-			ferrorIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-			startActivity(ferrorIntent);
+
+		super.onCreate();
+		PathManager.DIR_DATA = getDir("files", MODE_PRIVATE).getParent();
+		PathManager.DIR_CACHE = getCacheDir();
+		PathManager.DIR_ACCOUNT_NEW = PathManager.DIR_DATA + "/accounts";
+		Tools.DEVICE_ARCHITECTURE = Architecture.getDeviceArchitecture();
+		//Force x86 lib directory for Asus x86 based zenfones
+		if(Architecture.isx86Device() && Architecture.is32BitsDevice()){
+			String originalJNIDirectory = getApplicationInfo().nativeLibraryDir;
+			getApplicationInfo().nativeLibraryDir = originalJNIDirectory.substring(0,
+										originalJNIDirectory.lastIndexOf("/"))
+									.concat("/x86");
 		}
 
 		//设置主题
@@ -109,6 +111,18 @@ public class PojavApplication extends Application {
 					AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 					break;
 			}
+		}
+	}
+
+	private void launchSafeMode(Throwable t, String message) {
+		try {
+			Intent intent = new Intent(this, SafeModeActivity.class)
+					.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+					.putExtra(SafeModeActivity.EXTRA_MESSAGE, message)
+					.putExtra(SafeModeActivity.EXTRA_STACKTRACE, Log.getStackTraceString(t));
+			startActivity(intent);
+		} catch (Throwable ignore) {
+			Log.e(CRASH_REPORT_TAG, "SafeMode fallback failed", ignore);
 		}
 	}
 
