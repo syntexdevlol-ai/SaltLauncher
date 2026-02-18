@@ -117,7 +117,7 @@ public class MenuView extends View {
                 }
             });
         } else {
-            icon = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.img_app);
+            icon = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.ic_salt_floating);
         }
     }
 
