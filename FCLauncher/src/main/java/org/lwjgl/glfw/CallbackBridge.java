@@ -20,6 +20,10 @@ public class CallbackBridge {
     private static boolean isGrabbing = false;
     private static final Consumer<Boolean> grabListener = isGrabbing -> CallbackBridge.fclBridge.setCursorMode(isGrabbing ? FCLBridge.CursorDisabled : FCLBridge.CursorEnabled);
 
+    // Gamepad state buffers used by direct gamepad handler
+    public static float[] sGamepadAxisBuffer = new float[6];
+    public static boolean[] sGamepadButtonBuffer = new boolean[16];
+
     public static final int CLIPBOARD_COPY = 2000;
     public static final int CLIPBOARD_PASTE = 2001;
     public static final int CLIPBOARD_OPEN = 2002;
@@ -236,4 +240,3 @@ public class CallbackBridge {
         System.loadLibrary("pojavexec");
     }
 }
-

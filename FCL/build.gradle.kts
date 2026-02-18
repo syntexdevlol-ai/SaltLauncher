@@ -159,6 +159,11 @@ dependencies {
     implementation("androidx.palette:palette-ktx:1.0.0")
     implementation("com.github.Mathias-Boulay:android_gamepad_remapper:2.0.3")
     implementation("com.github.addisonElliott:SegmentedButton:3.1.9")
+    implementation("net.objecthunter:exp4j:0.4.8")
+    implementation("io.github.controlwear:virtualjoystick:1.10.1")
+    // Pojav control system dependencies
+    implementation("net.objecthunter:exp4j:0.4.8")
+    implementation("io.github.controlwear:virtualjoystick:1.10.1")
 }
 
 tasks.register("updateMap") {

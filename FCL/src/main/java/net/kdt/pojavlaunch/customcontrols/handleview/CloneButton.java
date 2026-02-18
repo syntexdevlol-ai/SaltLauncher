@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.R;
+import com.saltlauncher.app.R;
 import net.kdt.pojavlaunch.customcontrols.buttons.ControlInterface;
 
 @SuppressLint("AppCompatCustomView")

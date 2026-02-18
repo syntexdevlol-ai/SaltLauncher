@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import net.kdt.pojavlaunch.EfficientAndroidLWJGLKeycode;
 import net.kdt.pojavlaunch.GrabListener;
-import net.kdt.pojavlaunch.R;
+import com.saltlauncher.app.R;
 import net.kdt.pojavlaunch.Tools;
 
 import android.widget.TextView;

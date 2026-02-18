@@ -19,12 +19,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.saltlauncher.app.R;
+
 import com.google.gson.JsonSyntaxException;
 import com.kdt.pickafile.FileListView;
 import com.kdt.pickafile.FileSelectedListener;
 
 import net.kdt.pojavlaunch.MinecraftGLSurface;
-import net.kdt.pojavlaunch.R;
+import com.saltlauncher.app.R;
 import net.kdt.pojavlaunch.Tools;
 import net.kdt.pojavlaunch.customcontrols.buttons.ControlButton;
 import net.kdt.pojavlaunch.customcontrols.buttons.ControlDrawer;
