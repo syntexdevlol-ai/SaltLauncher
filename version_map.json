@@ -1,0 +1,16 @@
+[
+  {
+    "type": "release",
+    "versionCode": 1000,
+    "versionName": "1.0.0-salt",
+    "date": "2026.02.18",
+    "description": [
+      {
+        "lang": "en",
+        "text": "First Salt Launcher build based on FCL. Update checker now points to this repository."
+      }
+    ],
+    "netdiskUrl": "",
+    "url": "https://github.com/syntexdevlol-ai/SaltLauncher/releases/download/1.0.0-salt/SaltLauncher-release-1.0.0-salt-all.apk"
+  }
+]

@@ -1,54 +1,46 @@
-name: Build Salt Launcher APK
+name: Build Debug APK
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
+  push:
+    branches: ["main"]
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
-      ANDROID_HOME: ${{ github.workspace }}/android-sdk
-      BUILD_TOOLS_VERSION: "34.0.0"
+      ANDROID_HOME: /usr/lib/android-sdk
+      ANDROID_SDK_ROOT: /usr/lib/android-sdk
+      PATH: /usr/lib/android-sdk/platform-tools:/usr/lib/android-sdk/cmdline-tools/latest/bin:/usr/lib/android-sdk/build-tools/33.0.2:${PATH}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: "17"
+          cache: gradle
 
-      - name: Install Android SDK command-line tools
+      - name: Install Android SDK command line tools
         run: |
-          mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"
-          cd "$ANDROID_SDK_ROOT"
-          curl -L https://dl.google.com/android/repository/commandlinetools-linux-14742923_latest.zip -o cmdline-tools.zip
-          unzip -q cmdline-tools.zip -d "$ANDROID_SDK_ROOT/cmdline-tools"
-          rm cmdline-tools.zip
-          mv "$ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools" "$ANDROID_SDK_ROOT/cmdline-tools/latest"
-          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
-          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
-          echo "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin" >> $GITHUB_PATH
-          echo "$ANDROID_SDK_ROOT/platform-tools" >> $GITHUB_PATH
+          sudo mkdir -p /usr/lib/android-sdk/cmdline-tools
+          curl -sSL -o /tmp/cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+          sudo unzip -q /tmp/cmdline-tools.zip -d /usr/lib/android-sdk/cmdline-tools
+          sudo mv /usr/lib/android-sdk/cmdline-tools/cmdline-tools /usr/lib/android-sdk/cmdline-tools/latest
+          yes | sudo /usr/lib/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platform-tools" "platforms;android-33" "build-tools;33.0.2"
 
-      - name: Install SDK packages
+      - name: Build debug APK
         run: |
-          yes | sdkmanager --licenses
-          sdkmanager \
-            "platform-tools" \
-            "build-tools;$BUILD_TOOLS_VERSION" \
-            "platforms;android-33"
-
-      - name: Build debug APK (skip ndk-build; use prebuilt jniLibs)
-        run: |
-          DISABLE_NDK_BUILD=1 ./gradlew --no-daemon SaltLauncherApp:assembleDebug
+          chmod +x gradlew
+          DISABLE_NDK_BUILD=1 ./gradlew --no-daemon FCL:assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SaltLauncher-debug-apk
-          path: SaltLauncherApp/build/outputs/apk/debug/*.apk
+          name: SaltLauncher-debug
+          path: FCL/build/outputs/apk/debug/*.apk
