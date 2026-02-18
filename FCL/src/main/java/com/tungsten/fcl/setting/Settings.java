@@ -22,6 +22,7 @@ import com.tungsten.fclauncher.utils.FCLPath;
 import com.tungsten.fclcore.auth.authlibinjector.AuthlibInjectorServer;
 import com.tungsten.fclcore.task.Schedulers;
 import com.tungsten.fclcore.util.CacheRepository;
+import static com.tungsten.fcl.setting.ConfigHolder.config;
 
 public final class Settings {
 
