@@ -51,9 +51,14 @@ jobs:
           echo "NDK_HOME=$ANDROID_SDK_ROOT/ndk/27.0.12077973" >> $GITHUB_ENV
 
       - name: Build debug APK
+        env:
+          AAPT2_OVERRIDE: ${{ env.ANDROID_SDK_ROOT }}/build-tools/34.0.0/aapt2
         run: |
           chmod +x gradlew
-          DISABLE_NDK_BUILD=1 ./gradlew --no-daemon --stacktrace --info --warning-mode all FCL:assembleDebug 2>&1 | tee build.log
+          DISABLE_NDK_BUILD=1 ./gradlew --no-daemon --stacktrace --info --warning-mode all \
+            -Dandroid.aapt2FromMavenOverride=$AAPT2_OVERRIDE \
+            --refresh-dependencies \
+            FCL:assembleDebug 2>&1 | tee build.log
           exit ${PIPESTATUS[0]}
 
       - name: Upload APK artifact
