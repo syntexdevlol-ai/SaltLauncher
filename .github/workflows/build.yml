@@ -12,7 +12,6 @@ jobs:
     env:
       ANDROID_HOME: /usr/lib/android-sdk
       ANDROID_SDK_ROOT: /usr/lib/android-sdk
-      PATH: /usr/lib/android-sdk/platform-tools:/usr/lib/android-sdk/cmdline-tools/latest/bin:/usr/lib/android-sdk/build-tools/33.0.2:${PATH}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,6 +37,7 @@ jobs:
           sudo unzip -q /tmp/cmdline-tools.zip -d /usr/lib/android-sdk/cmdline-tools
           sudo mv /usr/lib/android-sdk/cmdline-tools/cmdline-tools /usr/lib/android-sdk/cmdline-tools/latest
           yes | sudo /usr/lib/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platform-tools" "platforms;android-33" "build-tools;33.0.2"
+          echo "PATH=$PATH:/usr/lib/android-sdk/platform-tools:/usr/lib/android-sdk/cmdline-tools/latest/bin:/usr/lib/android-sdk/build-tools/33.0.2" >> $GITHUB_ENV
 
       - name: Build debug APK
         run: |
