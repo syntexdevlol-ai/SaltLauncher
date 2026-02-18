@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/editName_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/control_debug" />
+        <EditText
+            android:id="@+id/editName_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/control_debug" />
+
+        <TextView
+            android:id="@+id/editSize_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size" />
+        <TextView
+            android:id="@+id/editSize_x_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Width / Height" />
+        <EditText
+            android:id="@+id/editSize_editTextX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Width" />
+        <EditText
+            android:id="@+id/editSize_editTextY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Height" />
+
+        <TextView
+            android:id="@+id/editOrientation_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orientation" />
+        <Spinner
+            android:id="@+id/editOrientation_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/editMapping_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mapping" />
+        <TextView
+            android:id="@+id/mapping_1_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Key 1" />
+        <Spinner
+            android:id="@+id/editMapping_spinner_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/mapping_2_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Key 2" />
+        <Spinner
+            android:id="@+id/editMapping_spinner_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/mapping_3_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Key 3" />
+        <Spinner
+            android:id="@+id/editMapping_spinner_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/mapping_4_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Key 4" />
+        <Spinner
+            android:id="@+id/editMapping_spinner_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Switch
+            android:id="@+id/checkboxToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle" />
+        <Switch
+            android:id="@+id/checkboxPassThrough"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pass through" />
+        <Switch
+            android:id="@+id/checkboxSwipeable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swipeable" />
+        <Switch
+            android:id="@+id/checkboxForwardLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forward lock" />
+        <Switch
+            android:id="@+id/checkboxAbsoluteFingerTracking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Absolute tracking" />
+
+        <SeekBar
+            android:id="@+id/editStrokeWidth_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/editStrokeWidth_textView_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%" />
+
+        <SeekBar
+            android:id="@+id/editCornerRadius_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/editCornerRadius_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Corner radius" />
+        <TextView
+            android:id="@+id/editCornerRadius_textView_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%" />
+
+        <SeekBar
+            android:id="@+id/editButtonOpacity_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/editButtonOpacity_textView_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%" />
+
+        <TextView
+            android:id="@+id/editBackgroundColor_textView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:background="@drawable/ic_control_placeholder"
+            android:text="@string/global_save" />
+
+        <TextView
+            android:id="@+id/editStrokeColor_textView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:background="@drawable/ic_control_placeholder"
+            android:text="@string/global_save" />
+
+        <TextView
+            android:id="@+id/visibility_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visibility" />
+
+        <CheckBox
+            android:id="@+id/visibility_game_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show in-game" />
+        <CheckBox
+            android:id="@+id/visibility_menu_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show in menu" />
+    </LinearLayout>
+</ScrollView>

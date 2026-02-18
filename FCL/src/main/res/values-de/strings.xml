@@ -44,7 +44,7 @@
     <string name="account_injector_server">Authentifizierungsserver</string>
     <string name="account_login">Anmelden</string>
     <string name="account_methods_offline">Offline-Konto</string>
-    <string name="account_methods_offline_name_invalid">"Benutzername (bis zu 16 Zeichen) darf nur lateinische Buchstaben, Zahlen und Unterstriche enthalten. \nBeispiele für gültige Namen: Llerey, Tungsten, Tungsten123; \nBeispiele für ungültige Namen: Exam ple, Exam-a%%%, Tungsten_hello_world_hello_world. Wenn ein Mod auf dem Server diese Einschränkungen aufhebt, können Sie diese Warnung ignorieren."</string>
+    <string name="account_methods_offline_name_invalid" formatted="false">"Benutzername (bis zu 16 Zeichen) darf nur lateinische Buchstaben, Zahlen und Unterstriche enthalten. \nBeispiele für gültige Namen: Llerey, Tungsten, Tungsten123; \nBeispiele für ungültige Namen: Exam ple, Exam-a%%%, Tungsten_hello_world_hello_world. Wenn ein Mod auf dem Server diese Einschränkungen aufhebt, können Sie diese Warnung ignorieren."</string>
     <string name="account_methods_yggdrasil">Mojang-Konto</string>
     <string name="account_methods_authlib_injector">Externes Konto</string>
     <string name="account_methods_microsoft">Microsoft-Konto</string>

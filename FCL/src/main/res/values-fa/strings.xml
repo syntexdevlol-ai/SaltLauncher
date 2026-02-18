@@ -44,7 +44,7 @@
     <string name="account_injector_server">سرور احراز هویت</string>
     <string name="account_login">ورود</string>
     <string name="account_methods_offline">حساب آفلاین</string>
-    <string name="account_methods_offline_name_invalid">نام کاربری فقط می تواند شامل حروف انگلیسی، اعداد و زیرخط باشد و طول آن نباید از ۱۶ کاراکتر بیشتر باشد.\nنام های کاربری مجاز: Tungsten, Tungsten_123;\nنام های کاربری غیر مجاز: Exam ple, Exam-a_%%%, Tungsten_hello_world_hello_world .\nاگر فکر می کنید که یک ماد یا پلاگین در سمت سرور برای حذف این محدودیت نصب شده است، می توانید این هشدار را نادیده بگیرید.</string>
+    <string name="account_methods_offline_name_invalid" formatted="false">نام کاربری فقط می تواند شامل حروف انگلیسی، اعداد و زیرخط باشد و طول آن نباید از ۱۶ کاراکتر بیشتر باشد.\nنام های کاربری مجاز: Tungsten, Tungsten_123;\nنام های کاربری غیر مجاز: Exam ple, Exam-a_%%%, Tungsten_hello_world_hello_world .\nاگر فکر می کنید که یک ماد یا پلاگین در سمت سرور برای حذف این محدودیت نصب شده است، می توانید این هشدار را نادیده بگیرید.</string>
     <string name="account_methods_yggdrasil">حساب موجانگ</string>
     <string name="account_methods_authlib_injector">حساب خارجی</string>
     <string name="account_methods_microsoft">حساب مایکروسافت</string>

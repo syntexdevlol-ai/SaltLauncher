@@ -60,7 +60,7 @@
     <string name="account_injector_server">Authentication Server</string>
     <string name="account_login">Login</string>
     <string name="account_methods_offline">Offline Account</string>
-    <string name="account_methods_offline_name_invalid">Under normal circumstances, the game username can only contain English characters, numbers and underscores, and the length cannot exceed 16 characters.\nSome legitimate usernames: Tungsten, Tungsten_123;\nSome illegal usernames: Exam ple, Exam-a_%%%, Tungsten_hello_world_hello_world.\nIf you believe that there is a corresponding mod or plugin on the server side to remove this restriction, you can ignore this warning.</string>
+    <string name="account_methods_offline_name_invalid" formatted="false">Under normal circumstances, the game username can only contain English characters, numbers and underscores, and the length cannot exceed 16 characters.\nSome legitimate usernames: Tungsten, Tungsten_123;\nSome illegal usernames: Exam ple, Exam-a_%%%, Tungsten_hello_world_hello_world.\nIf you believe that there is a corresponding mod or plugin on the server side to remove this restriction, you can ignore this warning.</string>
     <string name="account_methods_yggdrasil">Mojang Account</string>
     <string name="account_methods_authlib_injector">External Account</string>
     <string name="account_methods_microsoft">Microsoft Account</string>
@@ -833,7 +833,7 @@
     <string name="search_previous_page" translatable="false">◀</string>
     <string name="search_next_page" translatable="false">▶</string>
     <string name="search_last_page">Last</string>
-    <string name="search_page_n" translatable="false">%d / %s</string>
+    <string name="search_page_n" translatable="false">%1$d / %2$s</string>
 
     <string name="settings_advanced_dont_check_game_completeness">Do not check game integrity</string>
     <string name="settings_advanced_dont_check_jvm_validity">Do not check JVM compatibility</string>
