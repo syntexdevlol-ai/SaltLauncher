@@ -32,46 +32,55 @@ class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        try {
+            initItems()
 
-        initItems()
+            binding = ActivitySplashBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
-        binding = ActivitySplashBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.titleText.text = InfoDistributor.APP_NAME
-        binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@SplashActivity)
-            adapter = installableAdapter
-        }
-
-        binding.startButton.apply {
-            setOnClickListener {
-                if (isStarted) return@setOnClickListener
-                isStarted = true
-                binding.splashText.setText(R.string.splash_screen_installing)
-                installableAdapter.startAllTasks()
+            binding.titleText.text = InfoDistributor.APP_NAME
+            binding.recyclerView.apply {
+                layoutManager = LinearLayoutManager(this@SplashActivity)
+                adapter = installableAdapter
             }
-            isClickable = false
-        }
 
-        if (!Tools.checkStorageRoot()) {
-            startActivity(Intent(this, MissingStorageActivity::class.java))
+            binding.startButton.apply {
+                setOnClickListener {
+                    if (isStarted) return@setOnClickListener
+                    isStarted = true
+                    binding.splashText.setText(R.string.splash_screen_installing)
+                    installableAdapter.startAllTasks()
+                }
+                isClickable = false
+            }
+
+            if (!Tools.checkStorageRoot()) {
+                startActivity(Intent(this, MissingStorageActivity::class.java))
+                finish()
+                return
+            }
+
+            //如果安卓版本小于等于9，则检查存储权限（不是管理所有文件权限），拥有存储权限会保证文件、文件夹正常创建
+            //但是并不强制要求用户必须授予权限，如果用户拒绝，那么之后产生的问题将由用户承担
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P && !StoragePermissionsUtils.hasStoragePermissions(this)) {
+                TipDialog.Builder(this)
+                    .setTitle(R.string.generic_warning)
+                    .setMessage(InfoCenter.replaceName(this, R.string.permissions_write_external_storage))
+                    .setWarning()
+                    .setConfirmClickListener { requestStoragePermissions() }
+                    .setCancelClickListener { checkEnd() } //用户取消，那就跟随用户的意愿
+                    .showDialog()
+            } else {
+                checkEnd()
+            }
+        } catch (t: Throwable) {
+            // Safe-mode fallback: show stacktrace on screen instead of silently closing
+            startActivity(
+                Intent(this, SafeModeActivity::class.java)
+                    .putExtra(SafeModeActivity.EXTRA_MESSAGE, getString(R.string.generic_error))
+                    .putExtra(SafeModeActivity.EXTRA_STACKTRACE, android.util.Log.getStackTraceString(t))
+            )
             finish()
-            return
-        }
-
-        //如果安卓版本小于等于9，则检查存储权限（不是管理所有文件权限），拥有存储权限会保证文件、文件夹正常创建
-        //但是并不强制要求用户必须授予权限，如果用户拒绝，那么之后产生的问题将由用户承担
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P && !StoragePermissionsUtils.hasStoragePermissions(this)) {
-            TipDialog.Builder(this)
-                .setTitle(R.string.generic_warning)
-                .setMessage(InfoCenter.replaceName(this, R.string.permissions_write_external_storage))
-                .setWarning()
-                .setConfirmClickListener { requestStoragePermissions() }
-                .setCancelClickListener { checkEnd() } //用户取消，那就跟随用户的意愿
-                .showDialog()
-        } else {
-            checkEnd()
         }
     }
 
