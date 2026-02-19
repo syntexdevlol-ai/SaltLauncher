@@ -101,17 +101,21 @@ android {
             initWith(getByName("debug"))
             isMinifyEnabled = true
             isShrinkResources = true
+            // Use debug signing to avoid missing release keystore in CI
+            signingConfig = signingConfigs.getByName("customDebug")
         }
         create("proguardNoDebug") {
             initWith(getByName("proguard"))
             isDebuggable = false
+            signingConfig = signingConfigs.getByName("customDebug")
         }
         getByName("release") {
             // Don't set to true or java.awt will be a.a or something similar.
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
             resValue("string", "storageProviderAuthorities", storageProviderId)
-            signingConfig = signingConfigs.getByName("releaseBuild")
+            // Always use debug signing in CI to avoid missing release keystore
+            signingConfig = signingConfigs.getByName("customDebug")
         }
     }
 
