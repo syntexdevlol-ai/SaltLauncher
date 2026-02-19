@@ -692,4 +692,7 @@
     <!-- Sponsorship Related -->
     <string name="request_sponsorship_title">Support My Development</string>
     <string name="request_sponsorship_message">Most of the content in this software is developed and maintained by me alone. If you find this software helpful and are in a position to do so, I hope you will consider sponsoring me to give me more motivation to continue developing and improving it. Thank you for your support!</string>
+
+    <!-- Override problematic upstream material string to avoid AAPT format error -->
+    <string name="bind_process_waiting_joystick" formatted="false">Waiting for joystick…</string>
 </resources>
