@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Salt Launcher (light / white theme) -->
+    <color name="black_or_white">#0F172A</color>
+
+    <color name="background_app">#FFFFFF</color>
+    <color name="background_app_error">#FEE2E2</color>
+    <color name="background_overlay">#F1F5F9</color>
+    <color name="background_status_bar">#FFFFFF</color>
+    <color name="background_menu_top">#FFFFFF</color>
+    <color name="background_menu_top_error">#FEE2E2</color>
+    <color name="background_menu_element">#E5E7EB</color>
+    <color name="background_ripple_effect">#1A0F172A</color>
+
+    <color name="button_background">#E2E8F0</color>
+    <color name="button_background_selected">#CBD5E1</color>
+    <color name="dialog_background">#FFFFFF</color>
+
+    <color name="menu_bar">#FFFFFF</color>
+    <color name="menu_bar_text">#0F172A</color>
+    <color name="menu_overlay">#E6FFFFFF</color>
+    <color name="menu_progress">#CBD5E1</color>
+
+    <color name="background_item">#FFFFFFFF</color>
+    <color name="background_item_selected">#FFF1F5F9</color>
+    <color name="background_item_disabled">#FFF8FAFC</color>
+    <color name="background_sponsor_intermediate">#CCFFCB8B</color>
+    <color name="background_sponsor_advanced">#CCFDA28A</color>
+
+    <color name="edit_box_fill">#FFFFFF</color>
+    <color name="edit_box_fill_selected">#FFF1F5F9</color>
+
+    <color name="mod_category_fill">#80E2E8F0</color>
+    <color name="text_background_fill">#B3E2E8F0</color>
+
+    <color name="settings_category">#0F172A</color>
+
+    <color name="favorite_color">#EF4444</color>
+
+    <color name="icon_color">#0F172A</color>
+
+    <color name="primary_text">#0F172A</color>
+</resources>
