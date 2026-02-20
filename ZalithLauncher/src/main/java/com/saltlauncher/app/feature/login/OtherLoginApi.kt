@@ -47,7 +47,8 @@ object OtherLoginApi {
             this.clientToken = UUID.randomUUID().toString().lowercase()
         }
         val data = Gson().toJson(authRequest)
-        callLogin(data, "/authserver/authenticate", listener)
+        // Yggdrasil authenticate endpoint (baseUrl already points to auth server root)
+        callLogin(data, "/authenticate", listener)
     }
 
     @Throws(IOException::class)
@@ -68,7 +69,8 @@ object OtherLoginApi {
             refresh.selectedProfile = selectedProfile
         }
         val data = Gson().toJson(refresh)
-        callLogin(data, "/authserver/refresh", listener)
+        // Yggdrasil refresh endpoint
+        callLogin(data, "/refresh", listener)
     }
 
     private fun callLogin(data: String, url: String, listener: Listener) {
